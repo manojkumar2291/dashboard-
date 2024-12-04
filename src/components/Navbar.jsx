@@ -14,7 +14,7 @@ const Navbar = ({showloginhandler,showregisterhandler,showlogout,logout,toggleSi
       <button onClick={toggleSidebar} className="breadcrumb-btn">
       ☰
       </button>Vender dashboard</div>
-    {showlogout?<h4>FirmName :{firmname}</h4>:<></>}
+    {showlogout?!{firmname}?" No Firm Registred":<h4>FirmName :{firmname}</h4>:<></>}
         <div className="userauth">
            { !showlogout ? <><span onClick={showloginhandler}><button className='btn'>Login</button></span>
             <span onClick={showregisterhandler}> / <button className='btn'>Register</button> </span>
