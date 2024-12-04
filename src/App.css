@@ -23,7 +23,7 @@ body{
     background-color: rgb(151, 9, 134);
     width: 250px;
    
-    height: 85vh;
+    height: 100vh;
     padding-top: 10px;
     position: relative; /* Ensures sidebar doesn't affect other elements */
     transition: transform 0.3s ease-in-out;
@@ -36,6 +36,8 @@ body{
     justify-content: center;
     align-items: center;
     overflow-y: auto; 
+    background-color: #f7f7f7;
+    flex-direction: column;
 }
 
 
@@ -368,3 +370,34 @@ font-size: medium;
   .sidebarsection {
     transition: transform 0.3s ease-in-out;
 }
+/* hero */
+
+
+  .hero {
+    color: rgb(0, 0, 0);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 1.2rem;
+  }
+  
+  .hero button {
+    background-color: #ff9800;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px;
+  }
+  
+  .hero button:hover {
+    background-color: #e68900;
+  }

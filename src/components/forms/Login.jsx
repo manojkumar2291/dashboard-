@@ -2,7 +2,7 @@ import { useState } from 'react';
 import React from 'react'
 import { API_PATH } from '../../utilites/Apipath';
 
-const Login = ({welcomehandle}) => {
+const Login = ({welcomehandle,showregisterhandler}) => {
   
   const [email,setemail]=useState('');
   const [password,setpassword]=useState('');
@@ -62,7 +62,10 @@ const Login = ({welcomehandle}) => {
             <div className="btnsubmit">
                 <button type='submit'>Submit</button>
             </div><br/>
+
         </form>
+
+
     </div>
   )
 }

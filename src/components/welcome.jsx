@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const welcome = () => {
+const Welcome = ({showloginhandler}) => {
   return (
-    <div  className="welcomesection"style={{justifyContent:'center',alignItems:'center'}}>welcome {localStorage.getItem('name')}</div>
-  )
-}
+    <div className="hero">
+      <h1>Welcome to Our Platform!</h1>
+      <p>Your journey to better service starts here. Join us today to experience great products and services.</p>
+      <button onClick={() => {alert('Getting Started!')
+        showloginhandler()
+      }}>Get Started</button>
+    </div>
+  );
+};
 
-export default welcome
+export default Welcome;

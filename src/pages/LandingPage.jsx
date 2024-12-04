@@ -19,6 +19,7 @@ const LandingPage = () => {
   const [showlogout,setshowlogout]=useState(false);
   const [islogin,setislogin]=useState(false);
   const [showsidebar, setsidebar] = useState(false);
+  const [loading, setLoading] = useState(false);
 
 
   const toggleSidebar = () => {
@@ -101,6 +102,8 @@ const showproducthandler=()=>{
     <section  className="landingsection">
         <Navbar showloginhandler={showloginhandler} showregisterhandler={showregisterhandler} showlogout={showlogout} logout={logout} toggleSidebar={toggleSidebar} />
         <div className="collectionsection">
+         {/* Show the Welcome component or any main landing page content */}
+          
         {showsidebar && (
             <Sidebar
               showfirmhandler={showfirmhandler}
@@ -109,6 +112,19 @@ const showproducthandler=()=>{
             />
           )} 
           <div className="main-content">
+          {loading && (
+              <div className="loaderSection">
+                <ThreeCircles
+                  visible={loading}
+                  height={100}
+                  width={100}
+                  color="#4fa94d"
+                  ariaLabel="three-circles-loading"
+                />
+                <p>Loading, please wait...</p>
+              </div>
+            )}
+            {!loading && <Welcome showloginhandler={showloginhandler} showregisterhandler={showregisterhandler}/>}
         {showlogin&& <Login welcomehandle={welcomehandle}/>}
         {showregister&& <Register showloginhandler={showloginhandler}/>}
         {(islogin && showfirm )&& <AddFirm/>}
