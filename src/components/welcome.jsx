@@ -2,7 +2,7 @@ import React from 'react'
 
 const welcome = () => {
   return (
-    <div style={{justifyContent:'center',alignItems:'center'}}>welcome {localStorage.getItem('name')}</div>
+    <div  className="welcomesection"style={{justifyContent:'center',alignItems:'center'}}>welcome {localStorage.getItem('name')}</div>
   )
 }
 

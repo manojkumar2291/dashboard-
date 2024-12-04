@@ -18,6 +18,14 @@ const LandingPage = () => {
   const [showallproducts,setshowallproducts]=useState(false);
   const [showlogout,setshowlogout]=useState(false);
   const [islogin,setislogin]=useState(false);
+  const [showsidebar, setsidebar] = useState(false);
+  
+
+
+
+
+ 
+
 
 const showproducthandler=()=>{
   setshowregister(false);
@@ -58,6 +66,7 @@ const showproducthandler=()=>{
     setwelcome(true);
     
   }
+  
   const showallproducthandler=()=>{
     setshowallproducts(true);
     setshowregister(false);
