@@ -4,7 +4,7 @@
     font-size: large;
     height: 80px;
     display: flex;
-    background-color: rgb(151, 9, 134);
+    background-color: #4CAF50; /* Primary Green */
     justify-content: space-between;
     color: white;
     align-items: center;
@@ -17,12 +17,14 @@ body{
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto Condensed", sans-serif;
+    background-color: #f4f6f9; /* Light Grayish Blue Background */
+    color: #333333; /* Dark Gray for text */
 }
 
 .sidebarsection{
-    background-color: rgb(151, 9, 134);
+    color: white; /* Sidebar text color */
+    background-color: #1E1E2D; /* Dark Purple-Blue for Sidebar */
     width: 250px;
-   
     height: 100vh;
     padding-top: 10px;
     position: relative; /* Ensures sidebar doesn't affect other elements */
@@ -36,7 +38,7 @@ body{
     justify-content: center;
     align-items: center;
     overflow-y: auto; 
-    background-color: #f7f7f7;
+    background-color: #f4f6f9;
     flex-direction: column;
 }
 
@@ -54,8 +56,12 @@ body{
     font-weight: 500;
     font-size: medium;
     cursor: pointer;
+    color: white;
 
+}
 
+.sidebarsection ul li:hover {
+    background-color: #1976D2; /* Blue on hover */
 }
 .collectionsection{
     display: flex;
@@ -97,7 +103,8 @@ body{
     box-sizing: border-box;
     border-radius: 10px;
     padding: 50px;
-    border: 1px solid grey;
+    border: 1px solid #ccc;
+    background-color: white; /* White background for the form */
     margin: auto;
     position: relative;
     display: flex;
@@ -284,14 +291,15 @@ font-size: medium;
     /* btn Submit */
 
 .btnsubmit button {
-    background-color: rgb(43, 43, 180);
-    width: 6rem;
+    background-color: #4CAF50; /* Green for submit buttons */    width: 6rem;
     color: white;
     padding: 10px 0;
     margin-bottom: 20px;
     border-radius: 5px;
 }
-
+.btnsubmit button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
 
 /* landing image  */
 
@@ -350,8 +358,18 @@ font-size: medium;
 }
 
 .loaderSection {
-    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #4fa94d; /* Green for loader text */
 }
+.loaderSection p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+
 .btn{
         background-color: rgb(43, 180, 153);
         width: 4rem;
@@ -374,7 +392,7 @@ font-size: medium;
 
 
   .hero {
-    color: rgb(0, 0, 0);
+    color: #333;
     text-align: center;
   }
   
@@ -388,7 +406,7 @@ font-size: medium;
   }
   
   .hero button {
-    background-color: #ff9800;
+    background-color:#FFC107;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -399,5 +417,7 @@ font-size: medium;
   }
   
   .hero button:hover {
-    background-color: #e68900;
+    background-color:#E68900;
   }
+
+  

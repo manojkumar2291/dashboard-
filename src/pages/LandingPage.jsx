@@ -124,7 +124,7 @@ const showproducthandler=()=>{
                 <p>Loading, please wait...</p>
               </div>
             )}
-            {!loading && <Welcome showloginhandler={showloginhandler} showregisterhandler={showregisterhandler}/>}
+            {!islogin && !loading && <Welcome showloginhandler={showloginhandler} showregisterhandler={showregisterhandler}/>}
         {showlogin&& <Login welcomehandle={welcomehandle}/>}
         {showregister&& <Register showloginhandler={showloginhandler}/>}
         {(islogin && showfirm )&& <AddFirm/>}

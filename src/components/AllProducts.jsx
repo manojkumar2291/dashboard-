@@ -35,7 +35,7 @@ const AllProducts = () => {
             }
 
         } catch (error) {
-            
+            alert('Failed to delete product')
         }
 
     }
@@ -46,31 +46,43 @@ const AllProducts = () => {
   return (
     <div>
         {product.length===0 ? (<p>No Products added</p>):
-        <table>
-            <thead>
-                <tr>
-                    <th>PRODUCT NAME</th>
-                    <th>PRICE</th>
-                    <th>Image</th>
-                    <th>delete</th>
-                    <th>{product.length}</th>
-                    
-                </tr>
-
-            </thead>
-            <tbody>
-                {product.map((item,i)=>{
-                    return(
-                    <tr key={i}>
-                        <td>{item.productName}  </td>
-                        <td>{item.Price}</td>
-                        <td>{item.image?<img src={`${API_PATH}/uploads/${item.image}`} alt={item.productname}/>:<></>}</td>
-                        <td><button  onClick={()=>{productdeletebyid(item._id)}}>delete</button></td>
+        (
+            <table className="product-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Delete</th>
                     </tr>
-                    )
-                })}
-            </tbody>
-        </table>}
+                </thead>
+                <tbody>
+                    {product.map((item)=>{
+                            return (
+                                <>
+                                    <tr key={item._id}>
+                                        <td>{item.productName}</td>
+                                        <td>₹{item.Price}</td>
+                                    <td>
+                                        {item.image && (
+                                            <img src={`${API_URL}/uploads/${item.image}`} 
+                                            alt={item.productName}
+                                            style={{ width: '50px', height:'50px'  }}
+                                            />
+                                        )}
+                                    </td>
+                                    <td>
+                                        <button onClick={()=>productdeletebyid(item._id)}
+                                        className='deleteBtn'
+                                        >Delete</button>
+                                    </td>
+                                    </tr>
+                                </>
+                            )
+                    })}
+                </tbody>
+            </table>
+         )}
     </div>
   )
 }
