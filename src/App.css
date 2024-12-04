@@ -21,11 +21,24 @@ body{
 
 .sidebarsection{
     background-color: rgb(151, 9, 134);
-    width: 100%;
-    max-width: 25%;
+    width: 250px;
+   
     height: 85vh;
     padding-top: 10px;
+    position: relative; /* Ensures sidebar doesn't affect other elements */
+    transition: transform 0.3s ease-in-out;
 }
+
+.main-content {
+    flex-grow: 1; /* Ensures main content takes remaining space */
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; 
+}
+
+
 .userauth {
     cursor: pointer;
 }
@@ -44,6 +57,9 @@ body{
 }
 .collectionsection{
     display: flex;
+    width: 100%;
+    height: 100vh; /* Full height */
+    overflow: hidden;
 }
 /*Login section*/
 .loginsection{
@@ -59,22 +75,60 @@ body{
     width: 100%;
     max-width: 55%;
 }
-.authform{
+/* .authform{
     width: 100%;
-    max-width: 50%;
+    max-width: 500px;
     border: 1px solid grey;
+    padding: 20px;
+    box-sizing: border-box;
     border-radius: 10px;
     margin-top: -230px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+} */
+
+.authform {
+    width: 100%;
+    max-width: 40%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding: 50px;
+    border: 1px solid grey;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 .authform input{
 width: 100%;
-max-width: 55%;
+max-width: 80%;
 height: 1.4rem;
 font-size: medium;
+}
+
+/* .authform input[type="password"],
+.authform input[type="text"] {
+    width: 100%;
+    padding-right: 35px; 
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: border-box; 
+} */
+.authform input[type="password"],
+.authform input[type="text"] {
+    width: 100%;
+    height: 40px; /* Set a fixed height for the input */
+    font-size: 16px;
+    border: 1px solid #ccc; /* Visible border */
+    border-radius: 5px;
+    padding: 10px;
+    padding-right: 30px; /* Space for the icon */
+    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 /*register*/
@@ -261,13 +315,36 @@ font-size: medium;
     top: -80px;
     color: #2073c0;
 }
-
-.showpassword {
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+/* .showpassword {
     width: fit-content;
    position: relative;
-    bottom: 42px;
-    left: 190px;
+    bottom: 44px;
+    left: 160px;
     cursor: pointer;
+    padding: 2px;
+    border: 1px solid rgb(0, 255, 255);
+} */
+/* .showpassword {
+    position: absolute;
+   right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333; 
+} */
+.showpassword {
+    position: absolute;
+    right: 10px;  /* Adjust this value to control the spacing */
+    cursor: pointer;
+    font-size: 18px;
+    color: #333; /* Icon color */
 }
 
 .loaderSection {
@@ -279,4 +356,15 @@ font-size: medium;
         color: rgb(0, 0, 0);
         padding: 5px 0;
         border-radius: 15px;
+}
+.breadcrumb-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .sidebarsection {
+    transition: transform 0.3s ease-in-out;
 }

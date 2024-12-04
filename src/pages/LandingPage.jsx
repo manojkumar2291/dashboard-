@@ -19,9 +19,11 @@ const LandingPage = () => {
   const [showlogout,setshowlogout]=useState(false);
   const [islogin,setislogin]=useState(false);
   const [showsidebar, setsidebar] = useState(false);
-  
 
 
+  const toggleSidebar = () => {
+    setsidebar(!showsidebar);
+  };
 
 
  
@@ -97,15 +99,23 @@ const showproducthandler=()=>{
   return (
     <>
     <section  className="landingsection">
-        <Navbar showloginhandler={showloginhandler} showregisterhandler={showregisterhandler} showlogout={showlogout} logout={logout}/>
+        <Navbar showloginhandler={showloginhandler} showregisterhandler={showregisterhandler} showlogout={showlogout} logout={logout} toggleSidebar={toggleSidebar} />
         <div className="collectionsection">
-        <Sidebar showfirmhandler={showfirmhandler} showproducthandler={showproducthandler} showallproducthandler={showallproducthandler}/>
-       {showlogin&& <Login welcomehandle={welcomehandle}/>}
+        {showsidebar && (
+            <Sidebar
+              showfirmhandler={showfirmhandler}
+              showproducthandler={showproducthandler}
+              showallproducthandler={showallproducthandler}
+            />
+          )} 
+          <div className="main-content">
+        {showlogin&& <Login welcomehandle={welcomehandle}/>}
         {showregister&& <Register showloginhandler={showloginhandler}/>}
         {(islogin && showfirm )&& <AddFirm/>}
         {islogin && showproduct && <AddProduct/>}
         {(islogin && welcome) && <Welcome/>}
         {islogin && showallproducts && <AllProducts/>}
+        </div>
         </div>
     </section>
     </>

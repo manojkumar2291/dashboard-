@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Navbar = ({showloginhandler,showregisterhandler,showlogout,logout}) => {
+const Navbar = ({showloginhandler,showregisterhandler,showlogout,logout,toggleSidebar}) => {
   
 
   const firmname=localStorage.getItem('firmname')
@@ -8,7 +8,12 @@ const Navbar = ({showloginhandler,showregisterhandler,showlogout,logout}) => {
   return (
     <div className="navsection">
       
-        <div className="company">Vender dashboard</div>
+      
+        <div className="company">
+          {/* Breadcrumb Button */}
+      <button onClick={toggleSidebar} className="breadcrumb-btn">
+      ☰
+      </button>Vender dashboard</div>
     {showlogout?<h4>FirmName :{firmname}</h4>:<></>}
         <div className="userauth">
            { !showlogout ? <><span onClick={showloginhandler}><button className='btn'>Login</button></span>

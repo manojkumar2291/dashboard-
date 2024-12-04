@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import {API_PATH}  from '../../utilites/Apipath';
 import { ThreeCircles } from 'react-loader-spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Register = ({showloginhandler}) => {
   const [username,setusername]=useState('');
@@ -71,11 +73,17 @@ const handlesubmit=async(e)=>{
             <label htmlFor="">Email</label>
             <input type="text" placeholder='enter Email' name='email' value={email} onChange={(e)=>setemail(e.target.value)}/><br/>
             <label htmlFor="">Password</label>
-           
-            <input type={showPassword ? "text" : "password"} placeholder='enter Password' name='password' value={password} onChange={(e)=>setpassword(e.target.value)}/><br/>
-            <span className='showpassword'
-            onClick={handleShowPassword}
-              >{showPassword ? 'Hide' : 'Show'}</span>
+            <div className="input-container">
+        <input
+            type={showPassword ? 'text' : 'password'}
+            placeholder="Enter Password"
+            value={password}
+            onChange={(e) => setpassword(e.target.value)}
+        />
+        <span className="showpassword" onClick={handleShowPassword}>
+            <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+        </span>
+    </div><br />
             <div className="btnsubmit">
                 <button type='submit'>Submit</button>
             </div>
