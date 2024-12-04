@@ -92,7 +92,7 @@ const showproducthandler=()=>{
         <div className="collectionsection">
         <Sidebar showfirmhandler={showfirmhandler} showproducthandler={showproducthandler} showallproducthandler={showallproducthandler}/>
        {showlogin&& <Login welcomehandle={welcomehandle}/>}
-        {(islogin && showregister) && <Register showloginhandler={showloginhandler}/>}
+        {showregister&& <Register showloginhandler={showloginhandler}/>}
         {(islogin && showfirm )&& <AddFirm/>}
         {islogin && showproduct && <AddProduct/>}
         {(islogin && welcome) && <Welcome/>}
